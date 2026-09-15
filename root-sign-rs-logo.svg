@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Root &amp; Sign R and S monogram</title>
+  <desc id="desc">A bold white R and S monogram inside a glowing cyan circular outline on a transparent background.</desc>
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feFlood flood-color="#00f5ee" flood-opacity="0.58"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="221" fill="#020606" fill-opacity="0.96" stroke="#00f5ee" stroke-width="10" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#00a99f" stroke-width="2" stroke-opacity="0.52"/>
+  <text x="256" y="310" fill="#f4fffe" font-family="Arial Black, Arial, sans-serif" font-size="178" font-weight="900" text-anchor="middle" letter-spacing="-15">R<tspan fill="#00f5ee" font-size="91" letter-spacing="-5">&amp;</tspan>S</text>
+  <path d="M124 366c39 9 73 31 103 69M388 366c-39 9-73 31-103 69M173 385c19 2 39 11 58 26M339 385c-19 2-39 11-58 26" fill="none" stroke="#00f5ee" stroke-width="7" stroke-linecap="round" opacity="0.82"/>
+</svg>
