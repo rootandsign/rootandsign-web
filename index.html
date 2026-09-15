@@ -1,480 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Root & Sign | Deaf Community Movement</title>
-  <meta name="description" content="Rooted in the fight. United by our hands. Growing our sign." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#020606">
+  <meta name="description" content="Root & Sign — a collaborative, drama-free Deaf community rooted in history, unity, and connection.">
+  <title>Root & Sign | We, Not Me</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23020606'/%3E%3Cpath d='M18 50c2-14 4-24 14-37 10 13 12 23 14 37M25 33h14M32 13v37' fill='none' stroke='%2300f5ee' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
-    :root {
-      --bg-dark: #070a12;
-      --card-bg: rgba(18, 25, 38, 0.7);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-border-hover: rgba(52, 211, 153, 0.4);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-emerald: #10b981;
-      --accent-cyan: #06b6d4;
-      --accent-purple: #9333ea;
-      --nav-bg: rgba(7, 10, 18, 0.75);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-      line-height: 1.65;
-    }
-
-    /* Moving Ambient Parallax Background */
-    .bg-lights {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.35;
-      animation: floatOrb 22s infinite alternate ease-in-out;
-    }
-
-    .orb-1 {
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, #059669 0%, transparent 70%);
-      top: -100px;
-      left: -80px;
-    }
-
-    .orb-2 {
-      width: 520px;
-      height: 520px;
-      background: radial-gradient(circle, #0284c7 0%, transparent 70%);
-      bottom: -150px;
-      right: -100px;
-      animation-duration: 28s;
-      animation-delay: -5s;
-    }
-
-    .orb-3 {
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
-      top: 45%;
-      left: 60%;
-      animation-duration: 18s;
-      animation-delay: -10s;
-    }
-
-    @keyframes floatOrb {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      50% {
-        transform: translate3d(60px, 80px, 0) scale(1.1);
-      }
-      100% {
-        transform: translate3d(-50px, 120px, 0) scale(0.95);
-      }
-    }
-
-    /* Sticky Horizontal Navigation Bar */
-    header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: var(--nav-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--card-border);
-      z-index: 100;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-    }
-
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo span {
-      color: var(--accent-emerald);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    /* Layout & Sections */
-    .content-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem 5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 3rem 0 4.5rem;
-    }
-
-    .pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(16, 185, 129, 0.12);
-      color: #34d399;
-      border: 1px solid rgba(52, 211, 153, 0.3);
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(2.75rem, 7vw, 4.5rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 1.25rem;
-      background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 70%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-tagline {
-      font-size: clamp(1.2rem, 3vw, 1.55rem);
-      font-weight: 600;
-      color: #38bdf8;
-      margin-bottom: 1rem;
-    }
-
-    .hero-subtext {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    /* Glass Cards */
-    .glass-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 1.25rem;
-      padding: 2.25rem;
-      margin-bottom: 2.5rem;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      transition: border-color 0.25s ease, transform 0.25s ease;
-    }
-
-    .glass-card:hover {
-      border-color: var(--card-border-hover);
-      transform: translateY(-2px);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #fff;
-    }
-
-    .story-card p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #e2e8f0;
-      margin-bottom: 1.2rem;
-    }
-
-    .highlight-quote {
-      font-weight: 700;
-      color: #34d399;
-      font-size: 1.25rem;
-      margin-top: 1.5rem;
-      display: block;
-      border-left: 3px solid #34d399;
-      padding-left: 1rem;
-    }
-
-    /* Values Grid */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .mini-card {
-      background: rgba(15, 23, 42, 0.65);
-      border: 1px solid var(--card-border);
-      border-radius: 1rem;
-      padding: 1.75rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .mini-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.6rem;
-      color: #fff;
-    }
-
-    .mini-card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Video Embed Slot */
-    .video-placeholder {
-      width: 100%;
-      border-radius: 0.85rem;
-      background: #0b1120;
-      border: 1px dashed #334155;
-      padding: 3rem 1.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      margin-top: 1rem;
-    }
-
-    /* Buttons & Connect Hub */
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      background: #1e293b;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.95rem 1.25rem;
-      border-radius: 0.75rem;
-      border: 1px solid var(--card-border);
-      transition: all 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .btn:hover {
-      background: var(--accent-emerald);
-      color: #070a12;
-      border-color: var(--accent-emerald);
-      transform: translateY(-2px);
-    }
-
-    .btn.twitch:hover {
-      background: #9146ff;
-      color: #fff;
-      border-color: #9146ff;
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #070a12;
-      font-weight: 700;
-      border: none;
-    }
-
-    .btn.primary:hover {
-      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-      color: #022c22;
-      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      border-top: 1px solid var(--card-border);
-      padding: 3rem 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    footer p {
-      margin-bottom: 0.5rem;
-    }
-
-    @media (max-width: 600px) {
-      .nav-links {
-        gap: 0.85rem;
-      }
-      .nav-links a {
-        font-size: 0.85rem;
-      }
-      .glass-card {
-        padding: 1.5rem;
-      }
-    }
+    :root{--ink:#020606;--panel:#071211;--white:#f4fffe;--muted:#9db5b2;--cyan:#00f5ee;--teal:#00a99f;--line:rgba(0,245,238,.18);--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}
+    .skip{position:fixed;left:1rem;top:-5rem;z-index:100;padding:.7rem 1rem;background:var(--cyan);color:#001b19;font-weight:900}.skip:focus{top:1rem}
+    .noise{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.16;background-image:radial-gradient(rgba(255,255,255,.17) .55px,transparent .65px);background-size:6px 6px}
+    .glow{position:fixed;z-index:-2;width:46rem;height:46rem;border-radius:50%;filter:blur(130px);opacity:.09;pointer-events:none;background:var(--cyan)}.glow.one{top:-20rem;right:-13rem}.glow.two{bottom:-28rem;left:-16rem;background:var(--teal)}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{position:fixed;top:0;left:0;right:0;z-index:20;border-bottom:1px solid transparent;transition:.25s}header.scrolled{background:rgba(2,6,6,.86);backdrop-filter:blur(18px);border-color:var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:.65rem;font-weight:950;letter-spacing:-.05em;font-size:1.18rem}.brand-mark{width:29px;height:29px;border:1px solid var(--cyan);border-radius:50%;display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 18px rgba(0,245,238,.16)}.brand-mark svg{width:17px}
+    .links{display:flex;align-items:center;gap:2rem;color:#c5d7d5;font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.links a{transition:.2s}.links a:hover,.links a:focus{color:var(--cyan)}.nav-join{border:1px solid rgba(0,245,238,.55);padding:.65rem 1rem;border-radius:2px;color:var(--cyan)!important}
+    .menu{display:none;border:0;background:none;color:var(--white);padding:.5rem}.menu svg{width:26px}
+    .hero{min-height:100svh;display:grid;align-items:center;position:relative;padding:110px 0 55px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,6vw,6rem);align-items:center}.eyebrow{display:flex;align-items:center;gap:.8rem;margin:0 0 1.1rem;color:var(--cyan);font-size:.74rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase}.eyebrow:before{content:"";width:34px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+    h1{margin:0;font-size:clamp(4.25rem,10vw,8.2rem);line-height:.79;letter-spacing:-.085em;text-transform:uppercase;font-weight:950}.outline{color:transparent;-webkit-text-stroke:1.5px var(--cyan);filter:drop-shadow(0 0 12px rgba(0,245,238,.22))}.tagline{max-width:650px;margin:2rem 0 0;font-size:clamp(1.05rem,1.7vw,1.32rem);color:#bed0ce}.tagline strong{color:var(--white)}
+    .actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;padding:0 1.35rem;border:1px solid var(--cyan);text-transform:uppercase;font-size:.73rem;font-weight:950;letter-spacing:.14em;transition:.2s}.btn.primary{background:var(--cyan);color:#001817;box-shadow:0 0 24px rgba(0,245,238,.17)}.btn:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,245,238,.24)}.btn.ghost{border-color:#31514e;color:#d8e6e4}
+    .art{position:relative;display:grid;place-items:center}.art:before,.art:after{content:"";position:absolute;border:1px solid var(--line);border-radius:50%;inset:4%;animation:spin 24s linear infinite}.art:after{inset:14%;border-style:dashed;animation-direction:reverse;animation-duration:18s}.art img{width:min(100%,560px);aspect-ratio:1;object-fit:cover;mix-blend-mode:screen;filter:drop-shadow(0 0 18px rgba(0,245,238,.27));animation:float 6s ease-in-out infinite}.orbit{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--cyan);top:10%;right:16%;box-shadow:0 0 20px 5px rgba(0,245,238,.45)}
+    .scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.8rem;color:#77908d;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;writing-mode:vertical-rl}.scroll i{height:42px;width:1px;background:linear-gradient(var(--cyan),transparent)}
+    section{padding:clamp(80px,11vw,145px) 0;border-top:1px solid rgba(0,245,238,.08)}.section-head{display:grid;grid-template-columns:.48fr 1fr;gap:3rem;margin-bottom:4.5rem}.num{color:var(--cyan);font:800 .74rem ui-monospace,monospace;letter-spacing:.15em}.section-head h2{margin:0;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.95;letter-spacing:-.065em;text-transform:uppercase}.lead{font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.35;color:#d8e5e3;max-width:850px;margin:0}.lead em{font-style:normal;color:var(--cyan)}
+    .story-grid{display:grid;grid-template-columns:.48fr 1fr;gap:3rem}.story-copy{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:2rem;color:var(--muted)}.quote{grid-column:1/-1;margin:2.2rem 0 0;padding:1.8rem 2rem;border-left:2px solid var(--cyan);background:linear-gradient(90deg,rgba(0,245,238,.08),transparent);font-size:clamp(1.25rem,2vw,1.7rem);color:var(--white);font-weight:750}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.value{background:#03100f;padding:clamp(1.7rem,3.5vw,3rem);min-height:310px;position:relative;overflow:hidden}.value:after{content:attr(data-n);position:absolute;right:1rem;bottom:-2.4rem;font-size:9rem;line-height:1;font-weight:950;color:rgba(0,245,238,.035)}.icon{width:54px;height:54px;border:1px solid rgba(0,245,238,.35);display:grid;place-items:center;color:var(--cyan);margin-bottom:3rem}.icon svg{width:25px}.value h3{font-size:1.45rem;margin:0 0 1rem;text-transform:uppercase;letter-spacing:-.03em}.value p{margin:0;color:var(--muted)}
+    .connect{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}.signal{border:1px solid var(--line);min-height:390px;display:grid;place-items:center;position:relative;background:radial-gradient(circle,rgba(0,245,238,.11),transparent 56%)}.signal-core{width:120px;height:120px;border:1px solid var(--cyan);border-radius:50%;display:grid;place-items:center;color:var(--cyan);box-shadow:0 0 35px rgba(0,245,238,.16)}.signal-core svg{width:48px}.ring{position:absolute;border:1px solid rgba(0,245,238,.2);border-radius:50%;animation:pulse 3s ease-out infinite}.ring.r1{width:200px;height:200px}.ring.r2{width:290px;height:290px;animation-delay:1s}
+    .connect h2{font-size:clamp(2.7rem,5vw,5rem);line-height:.94;letter-spacing:-.06em;margin:.8rem 0 1.5rem;text-transform:uppercase}.connect p{color:var(--muted);font-size:1.08rem}.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.7rem 0 2.2rem}.chip{padding:.45rem .7rem;border:1px solid #25433f;color:#aac0bd;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
+    .cta{text-align:center;background:linear-gradient(180deg,transparent,rgba(0,245,238,.06));padding-bottom:120px}.cta h2{font-size:clamp(3.2rem,8vw,7.5rem);line-height:.85;letter-spacing:-.075em;text-transform:uppercase;margin:1rem 0 2rem}.cta p{max-width:660px;margin:0 auto 2.3rem;color:var(--muted);font-size:1.1rem}.cta .actions{justify-content:center}
+    footer{border-top:1px solid var(--line);padding:32px 0;color:#72908c}.foot{display:flex;justify-content:space-between;gap:2rem;align-items:center;font-size:.72rem;text-transform:uppercase;letter-spacing:.13em}.social{display:flex;gap:1.3rem}.social a:hover{color:var(--cyan)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+    @keyframes float{50%{transform:translateY(-12px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%{transform:scale(.8);opacity:0}35%{opacity:1}100%{transform:scale(1.16);opacity:0}}
+    @media(max-width:820px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:1.3rem 20px 1.8rem;background:rgba(2,6,6,.98);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:1.3rem}.links.open{display:flex}.menu{display:block}.hero-grid{grid-template-columns:1fr;text-align:center}.hero-copy{display:grid;justify-items:center}.eyebrow:after{content:"";width:34px;height:1px;background:var(--cyan)}.hero h1{font-size:clamp(4rem,20vw,6.3rem)}.tagline{max-width:540px}.art{width:min(82vw,480px);margin:auto}.scroll{display:none}.section-head,.story-grid{grid-template-columns:1fr;gap:1.2rem}.story-copy{grid-column:1;grid-template-columns:1fr}.values{grid-template-columns:1fr}.value{min-height:250px}.connect{grid-template-columns:1fr}.signal{min-height:330px;order:2}}
+    @media(max-width:520px){.wrap{width:min(calc(100% - 28px),var(--max))}nav{height:68px}.links{top:68px}.hero{padding-top:95px}.hero h1{font-size:20vw}.actions{width:100%}.btn{width:100%}.art:before{inset:0}.art:after{inset:11%}.story-copy{gap:1rem}.quote{padding:1.35rem}.foot{flex-direction:column;text-align:center}.social{flex-wrap:wrap;justify-content:center}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.art img,.art:before,.art:after,.ring{animation:none}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
-
-  <!-- Background Moving Atmosphere -->
-  <div class="bg-lights">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  <!-- Sticky Top Navigation -->
-  <header>
-    <nav>
-      <a href="#" class="logo">
-        Root <span>&</span> Sign
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">Story</a></li>
-        <li><a href="#values">Values</a></li>
-        <li><a href="#connect">Connect</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Main Content Layout -->
-  <main class="content-wrapper">
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="pill-badge">Arkansas Deaf Community</div>
-      <h1>Root & Sign</h1>
-      <div class="hero-tagline">Rooted in the fight. United by our hands. Growing our sign.</div>
-      <p class="hero-subtext">
-        A collaborative, drama-free space for our community to connect, share events, game together, and honor where we come from.
-      </p>
-    </section>
-
-    <!-- Core Story & History Section -->
-    <section id="about" class="glass-card story-card">
-      <h2 class="section-title">Our Roots</h2>
-      <p>
-        They called it gestures; we built a language. They called us mute; our ancestors fought tirelessly until the world recognized our voice and our rights.
-      </p>
-      <p>
-        Recognition does not mean we stop. We keep the wind alive with our hands, brushing the noise and ego away to keep our Deaf community united, resilient, and undivided.
-      </p>
-      <div class="highlight-quote">
-        "We, not me." — Free from red tape. Built for each other.
-      </div>
-    </section>
-
-    <!-- Values Grid -->
-    <section id="values" class="grid-3">
-      <div class="mini-card">
-        <h3>🌱 Deep Roots</h3>
-        <p>Honoring the generations before us who fought for our access, sign language rights, and community independence.</p>
-      </div>
-      <div class="mini-card">
-        <h3>🤝 Zero Division</h3>
-        <p>No hierarchy, no gatekeeping, and no politics. Everyone who communicates with hands and heart has a seat at our table.</p>
-      </div>
-      <div class="mini-card">
-        <h3>🎮 Real Connection</h3>
-        <p>Cookouts, social park meetups, and online gaming battle nights on Twitch. Community built on actual fun.</p>
-      </div>
-    </section>
-
-    <!-- Visual ASL Placeholder -->
-    <section class="glass-card">
-      <h2 class="section-title">Visual ASL Announcements</h2>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">
-        Sign language is our primary voice. Event flyers, video introductions, and updates will be featured here directly in ASL.
-      </p>
-      <div class="video-placeholder">
-        <p>🎥 ASL Welcome Video Coming Soon</p>
-      </div>
-    </section>
-
-    <!-- Connect & Links Hub -->
-    <section id="connect" class="glass-card">
-      <h2 class="section-title">Join The Movement</h2>
-      <p style="color: var(--text-muted);">
-        Follow our pages, join the stream lobbies, or reach out directly to help build our next gathering:
-      </p>
-      
-      <div class="links-grid">
-        <a href="https://www.facebook.com/rootandsign" target="_blank" rel="noopener" class="btn">
-          Facebook Page
-        </a>
-        <a href="https://www.instagram.com/rootandsign" target="_blank" rel="noopener" class="btn">
-          Instagram
-        </a>
-        <a href="https://www.tiktok.com/@rootandsign" target="_blank" rel="noopener" class="btn">
-          TikTok
-        </a>
-        <a href="https://www.twitch.tv/rootandsign" target="_blank" rel="noopener" class="btn twitch">
-          Twitch Gaming
-        </a>
-        <a href="mailto:info@rootandsign.org" class="btn primary">
-          Email info@rootandsign.org
-        </a>
-      </div>
-    </section>
-
+  <a class="skip" href="#main">Skip to content</a><div class="noise"></div><div class="glow one"></div><div class="glow two"></div>
+  <header id="header"><nav class="wrap" aria-label="Main navigation"><a class="brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21V4m0 8L5 7m7 8 7-5M8 18l-4-2m12 1 4-3"/></svg></span>ROOT &amp; SIGN</a><button class="menu" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="links"><a href="#roots">Our Roots</a><a href="#values">Values</a><a href="#connect">Connect</a><a class="nav-join" href="#join">Join Us</a></div></nav></header>
+  <main id="main">
+    <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">Deaf-led. Community-built.</p><h1>Root<br><span class="outline">&amp; Sign</span></h1><p class="tagline"><strong>Rooted in the fight. United by our hands.</strong><br>Growing our sign.</p><div class="actions"><a class="btn primary" href="#join">Join the movement <span>→</span></a><a class="btn ghost" href="#roots">Discover our roots</a></div></div><div class="art" aria-label="Root and Sign hand-tree emblem"><span class="orbit"></span><img src="root-and-sign-logo.jpg" alt="Four hands joined into a tree shape, glowing cyan, with leaves growing from the fingers"></div></div><div class="scroll">Scroll to grow<i></i></div></section>
+    <section id="roots"><div class="wrap"><div class="section-head reveal"><span class="num">01 — ORIGIN</span><h2>Our roots<br>run deep.</h2></div><div class="story-grid"><div class="story-copy reveal"><p>They called it gestures; we built a language. They called us mute; our ancestors fought tirelessly until the world recognized our voice and our rights.</p><p>Recognition does not mean we stop. We keep the wind alive with our hands, brushing noise and ego away to keep our Deaf community united, resilient, and undivided.</p><blockquote class="quote">“We, not me.” — Free from red tape. Built for each other.</blockquote></div></div></div></section>
+    <section id="values"><div class="wrap"><div class="section-head reveal"><span class="num">02 — WHAT GUIDES US</span><h2>Three truths.<br>One community.</h2></div><div class="values reveal"><article class="value" data-n="1"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8m0 8-5-4m5 1 5-4M4 4c4 0 7 2 8 5M20 2c-4 0-7 2-8 6"/></svg></div><h3>Deep roots</h3><p>We honor Deaf history, language, culture, and the people who fought before us.</p></article><article class="value" data-n="2"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h8M12 8v8M5 5l14 14M19 5 5 19"/></svg></div><h3>Zero division</h3><p>No drama. No status games. No “me first.” We move as one community.</p></article><article class="value" data-n="3"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12a4 4 0 1 1 4 4H6a4 4 0 0 1 0-8m10 0h2a4 4 0 1 1 0 8h-2"/></svg></div><h3>Real connection</h3><p>Events, games, ideas, and conversations—shared directly, visually, and openly.</p></article></div></div></section>
+    <section id="connect"><div class="wrap connect"><div class="signal reveal" aria-hidden="true"><span class="ring r1"></span><span class="ring r2"></span><span class="signal-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 11V5a1.5 1.5 0 0 1 3 0v5-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v6-3a1.5 1.5 0 0 1 3 0v4c0 5-3 9-8 9s-8-3-8-8v-2a2 2 0 0 1 4 0z"/></svg></span></div><div class="reveal"><span class="num">03 — STAY CONNECTED</span><h2>See it.<br>Share it.<br><span class="outline">Sign it.</span></h2><p>Visual ASL announcements put our language first. Catch community updates, upcoming events, gaming nights, and ways to get involved.</p><div class="chips"><span class="chip">ASL announcements</span><span class="chip">Local events</span><span class="chip">Gaming</span><span class="chip">Community</span></div><a class="btn primary" href="#join">Follow the movement →</a></div></div></section>
+    <section class="cta" id="join"><div class="wrap reveal"><span class="num">04 — GROW WITH US</span><h2>Hands up.<br><span class="outline">Roots down.</span></h2><p>Root &amp; Sign is a collaborative, drama-free space for our community to connect, share events, game together, and honor where we come from.</p><div class="actions"><a class="btn primary" href="https://www.facebook.com/rootandsign" target="_blank" rel="noopener">Join on Facebook ↗</a><a class="btn ghost" href="mailto:hello@rootandsign.org">Contact us</a></div></div></section>
   </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Root & Sign. All rights reserved.</p>
-    <p>Grounded in unity. Driven by community.</p>
-  </footer>
-
+  <footer><div class="wrap foot"><span>© <span id="year"></span> Root &amp; Sign</span><span>We, not me.</span><div class="social"><a href="https://www.facebook.com/rootandsign" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/rootandsign" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@rootandsign" target="_blank" rel="noopener">TikTok</a><a href="https://www.youtube.com/@rootandsign" target="_blank" rel="noopener">YouTube</a><a href="https://www.twitch.tv/rootandsign" target="_blank" rel="noopener">Twitch</a></div></div></footer>
+  <script>
+    const header=document.querySelector('#header'),menu=document.querySelector('.menu'),links=document.querySelector('.links');
+    addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>18),{passive:true});
+    menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
