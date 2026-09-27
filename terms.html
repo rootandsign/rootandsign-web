@@ -28,12 +28,11 @@
     .story-grid{display:grid;grid-template-columns:.48fr 1fr;gap:3rem}.story-copy{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:2rem;color:var(--muted)}.quote{grid-column:1/-1;margin:2.2rem 0 0;padding:1.8rem 2rem;border-left:2px solid var(--cyan);background:linear-gradient(90deg,rgba(0,245,238,.08),transparent);font-size:clamp(1.25rem,2vw,1.7rem);color:var(--white);font-weight:750}
     .values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.value{background:#03100f;padding:clamp(1.7rem,3.5vw,3rem);min-height:310px;position:relative;overflow:hidden}.value:after{content:attr(data-n);position:absolute;right:1rem;bottom:-2.4rem;font-size:9rem;line-height:1;font-weight:950;color:rgba(0,245,238,.035)}.icon{width:54px;height:54px;border:1px solid rgba(0,245,238,.35);display:grid;place-items:center;color:var(--cyan);margin-bottom:3rem}.icon svg{width:25px}.value h3{font-size:1.45rem;margin:0 0 1rem;text-transform:uppercase;letter-spacing:-.03em}.value p{margin:0;color:var(--muted)}
     
-    /* Connect Section & Video Player */
+    /* Connect Section & Video Player Styles */
     .connect{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-    .video-showcase{width:100%;max-width:320px;margin:0 auto;position:relative}
-    .video-card{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--panel);box-shadow:0 0 35px rgba(0,245,238,.12);transition:transform .3s ease,box-shadow .3s ease}
-    .video-card:hover{transform:translateY(-4px);box-shadow:0 0 45px rgba(0,245,238,.22);border-color:var(--cyan)}
-    .video-card iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .video-showcase{width:100%;max-width:320px;margin:0 auto;display:block}
+    .video-card{width:100%;aspect-ratio:9/16;border-radius:18px;border:1px solid var(--line);background:var(--panel);box-shadow:0 0 35px rgba(0,245,238,.16);overflow:hidden;position:relative}
+    .video-card iframe{width:100%;height:100%;display:block;border:0}
     
     .connect h2{font-size:clamp(2.7rem,5vw,5rem);line-height:.94;letter-spacing:-.06em;margin:.8rem 0 1.5rem;text-transform:uppercase}.connect p{color:var(--muted);font-size:1.08rem}.chips{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.7rem 0 2.2rem}.chip{padding:.45rem .7rem;border:1px solid #25433f;color:#aac0bd;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
     .cta{text-align:center;background:linear-gradient(180deg,transparent,rgba(0,245,238,.06));padding-bottom:120px}.cta h2{font-size:clamp(3.2rem,8vw,7.5rem);line-height:.85;letter-spacing:-.075em;text-transform:uppercase;margin:1rem 0 2rem}.cta p{max-width:660px;margin:0 auto 2.3rem;color:var(--muted);font-size:1.1rem}.cta .actions{justify-content:center}
@@ -55,10 +54,10 @@
     
     <!-- Section 03: ASL Video Announcement -->
     <section id="connect"><div class="wrap connect">
-      <div class="video-showcase reveal">
+      <div class="video-showcase">
         <div class="video-card">
           <iframe 
-            src="https://www.youtube.com/embed/XqzMEKnDMQg?rel=0&playsinline=1" 
+            src="https://www.youtube-nocookie.com/embed/XqzMEKnDMQg?rel=0&playsinline=1" 
             title="Root &amp; Sign ASL Announcement" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
